@@ -68,8 +68,8 @@
     })(function () {
       "use strict";
       var e, t, n, i, r, a;
-      "string" == typeof this["tracking-id"] &&
-        this["tracking-id"] &&
+      "string" == typeof this["G-EM8DXBQWVQ"] &&
+        this["G-EM8DXBQWVQ"] &&
         ((e = window),
         (t = document),
         (n = "script"),
@@ -86,7 +86,7 @@
         (r.async = 1),
         (r.src = "//www.google-analytics.com/analytics.js"),
         a.parentNode.insertBefore(r, a),
-        ga("create", this["tracking-id"], "auto", { allowLinker: !0 }),
+        ga("create", this["G-EM8DXBQWVQ"], "auto", { allowLinker: !0 }),
         ga("require", "linker"),
         ga(
           "linker:autoLink",

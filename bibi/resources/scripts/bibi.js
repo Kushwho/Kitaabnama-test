@@ -9021,7 +9021,7 @@
             (t.Back = U.Body.appendChild(
               sML.create("div", {
                 className: "bibi-arrow",
-                id: "bibi-arrow-back",
+                id: "bibi-arrow-back", 
                 Labels: { default: { default: "Back", ja: "戻る" } },
                 Distance: -1,
               })

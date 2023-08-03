@@ -84,55 +84,57 @@
         (r = t.createElement(n)),
         (a = t.getElementsByTagName(n)[0]),
         (r.async = 1),
-        (r.src = "https://www.googletagmanager.com/gtag/js?id=G-EM8DXBQWVQ"),
+        (r.src = "//www.google-analytics.com/analytics.js"),
         a.parentNode.insertBefore(r, a),
-        gtag("js", new Date()),
-        gtag("config", "G-EM8DXBQWVQ", { allowLinker: true }),
-        gtag("linker:autoLink", S["trustworthy-origins"].reduce(function (e, t) {
-        return e.push(t.replace(/^\w+:\/\//, ""));
-        }, [])
-        ))
-        // E.add("bibi:loaded-navigation", function () {
-        //   return sML.forEach(I.Panel.BookInfo.Navigation.querySelectorAll("a"))(
-        //     function (e) {
-        //       return e.addEventListener("click", function () {
-        //         ga("send", {
-        //           hitType: "event",
-        //           eventCategory: "Bibi: Jumped by Navigation",
-        //           eventAction: B.Path,
-        //           eventLabel:
-        //             e.innerHTML.replace(/<[^>]*>/g, "") +
-        //             ' - "'.concat(
-        //               e.getAttribute("data-bibi-original-href"),
-        //               '"'
-        //             ),
-        //           eventValue: void 0,
-        //         });
-        //       });
-        //     }
-        //   );
-        // }),
-        // E.add("bibi:played:by-button", function () {
-        //   ga("send", {
-        //     hitType: "event",
-        //     eventCategory: "Bibi: Played by Button",
-        //     eventAction: B.Path,
-        //     eventLabel: S["parent-uri"]
-        //       ? "on: " + S["parent-uri"].replace(/#.+$/, "")
-        //       : "",
-        //     eventValue: void 0,
-        //   });
-        // }),
-        // E.add("bibi:scrolled", function () {
-        //   if (100 != R.Current.Percent) return !1;
-        //   ga("send", {
-        //     hitType: "event",
-        //     eventCategory: "Bibi: Read Through",
-        //     eventAction: B.Path,
-        //     eventLabel: Date.now() - Bibi.TimeOrigin,
-        //     eventValue: void 0,
-        //   });
-        // }));
+        ga("create", this["G-EM8DXBQWVQ"], "auto", { allowLinker: !0 }),
+        ga("require", "linker"),
+        ga(
+          "linker:autoLink",
+          S["trustworthy-origins"].reduce(function (e, t) {
+            return e.push(t.replace(/^\w+:\/\//, ""));
+          }, [])
+        ),
+        E.add("bibi:loaded-navigation", function () {
+          return sML.forEach(I.Panel.BookInfo.Navigation.querySelectorAll("a"))(
+            function (e) {
+              return e.addEventListener("click", function () {
+                ga("send", {
+                  hitType: "event",
+                  eventCategory: "Bibi: Jumped by Navigation",
+                  eventAction: B.Path,
+                  eventLabel:
+                    e.innerHTML.replace(/<[^>]*>/g, "") +
+                    ' - "'.concat(
+                      e.getAttribute("data-bibi-original-href"),
+                      '"'
+                    ),
+                  eventValue: void 0,
+                });
+              });
+            }
+          );
+        }),
+        E.add("bibi:played:by-button", function () {
+          ga("send", {
+            hitType: "event",
+            eventCategory: "Bibi: Played by Button",
+            eventAction: B.Path,
+            eventLabel: S["parent-uri"]
+              ? "on: " + S["parent-uri"].replace(/#.+$/, "")
+              : "",
+            eventValue: void 0,
+          });
+        }),
+        E.add("bibi:scrolled", function () {
+          if (100 != R.Current.Percent) return !1;
+          ga("send", {
+            hitType: "event",
+            eventCategory: "Bibi: Read Through",
+            eventAction: B.Path,
+            eventLabel: Date.now() - Bibi.TimeOrigin,
+            eventValue: void 0,
+          });
+        }));
     });
   },
 });

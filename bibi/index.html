@@ -2,144 +2,21 @@
 
 <html id="bibi">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NNBQ3SWV");
+    </script>
+    <!-- End Google Tag Manager -->
     <!-- <script id="bibi-google analytics" src="extensions/gtag_analytics.js"></script> -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EM8DXBQWVQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-EM8DXBQWVQ');
-      // 'YOUR-GA-PROPERTY-ID' should be replaced with your actual Google Analytics property ID
-    </script>
-    <script>
-            /*!
-      *
-      *  # Bibi Extension: Analytics                                  (℠)
-      *
-      *  * © Satoru Matsushima - https://bibi.epub.link or https://github.com/satorumurmur/bibi
-      *  * Open source under the MIT License - https://github.com/satorumurmur/bibi/blob/master/LICENSE
-      *
-      */ !(function (e) {
-        var t = {};
-        function n(i) {
-          if (t[i]) return t[i].exports;
-          var r = (t[i] = { i: i, l: !1, exports: {} });
-          return e[i].call(r.exports, r, r.exports, n), (r.l = !0), r.exports;
-        }
-        (n.m = e),
-          (n.c = t),
-          (n.d = function (e, t, i) {
-            n.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: i });
-          }),
-          (n.r = function (e) {
-            "undefined" != typeof Symbol &&
-              Symbol.toStringTag &&
-              Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
-              Object.defineProperty(e, "__esModule", { value: !0 });
-          }),
-          (n.t = function (e, t) {
-            if ((1 & t && (e = n(e)), 8 & t)) return e;
-            if (4 & t && "object" == typeof e && e && e.__esModule) return e;
-            var i = Object.create(null);
-            if (
-              (n.r(i),
-              Object.defineProperty(i, "default", { enumerable: !0, value: e }),
-              2 & t && "string" != typeof e)
-            )
-              for (var r in e)
-                n.d(
-                  i,
-                  r,
-                  function (t) {
-                    return e[t];
-                  }.bind(null, r)
-                );
-            return i;
-          }),
-          (n.n = function (e) {
-            var t =
-              e && e.__esModule
-                ? function () {
-                    return e.default;
-                  }
-                : function () {
-                    return e;
-                  };
-            return n.d(t, "a", t), t;
-          }),
-          (n.o = function (e, t) {
-            return Object.prototype.hasOwnProperty.call(e, t);
-          }),
-          (n.p = ""),
-          n((n.s = 16));
-      })({
-        16: function (e, t) {
-          window.Bibi = window.Bibi || {};
-          Bibi.x({
-            id: "Analytics",
-            description: "Utilities for Tracking and Logging with Google Analytics.",
-            author: "Satoru Matsushima (@satorumurmur)",
-            version: "1.2.0-demo",
-          })(function () {
-            "use strict";
-            var e, t, n, i, r, a;
-            "string" == typeof this["G-EM8DXBQWVQ"] &&
-              this["G-EM8DXBQWVQ"] &&
-              ((e = window),
-              (t = document),
-              (n = "script"),
-              (i = "gtag"),
-              (e.dataLayer = e.dataLayer || []),
-              (e.gtag =
-                e.gtag ||
-                function () {
-                  e.dataLayer.push(arguments);
-                }),
-              // (e.gtag.l = 1 * new Date()),
-              // (r = t.createElement(n)),
-              // (a = t.getElementsByTagName(n)[0]),
-              // (r.async = 1),
-              // (r.src = "https://www.googletagmanager.com/gtag/js?id=" + this["G-EM8DXBQWVQ"]),
-              // a.parentNode.insertBefore(r, a),
-              // gtag("js", new Date()),
-              // gtag("config", this["G-EM8DXBQWVQ"]),
-              // gtag("config", this["G-EM8DXBQWVQ"], { 'allow_linker': true }),
-              E.add("bibi:loaded-navigation", function () {
-                return sML.forEach(I.Panel.BookInfo.Navigation.querySelectorAll("a"))(
-                  function (e) {
-                    return e.addEventListener("click", function () {
-                      gtag("event", "Bibi: Jumped by Navigation", {
-                        'event_category': "Bibi",
-                        'event_label':
-                          e.innerHTML.replace(/<[^>]*>/g, "") +
-                          ' - "'.concat(
-                            e.getAttribute("data-bibi-original-href"),
-                            '"'
-                          ),
-                      });
-                    });
-                  }
-                );
-              }),
-              E.add("bibi:played:by-button", function () {
-                gtag("event", "Bibi: Played by Button", {
-                  'event_category': "Bibi",
-                  'event_label': S["parent-uri"]
-                    ? "on: " + S["parent-uri"].replace(/#.+$/, "")
-                    : "",
-                });
-              }),
-              E.add("bibi:scrolled", function () {
-                if (100 != R.Current.Percent) return !1;
-                gtag("event", "Bibi: Read Through", {
-                  'event_category': "Bibi",
-                  'event_label': Date.now() - Bibi.TimeOrigin,
-                });
-              }));
-          });
-        },
-      });
-    </script>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -173,6 +50,16 @@
   </head>
 
   <body data-bibi-book="">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NNBQ3SWV"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="bibi-info">
       <h1>
         This E-Book is Published on the Web with Bibi | EPUB Reader on your
@@ -198,10 +85,10 @@
       data-bibi-book-mimetype="application/epub+zip"
       hidden="hidden"
     ></div>
-	<script>
-		document.addEventListener("click", function(event){
-			console.log(event.target)
-		})
-	</script>
+    <script>
+      document.addEventListener("click", function (event) {
+        console.log(event.target);
+      });
+    </script>
   </body>
 </html>

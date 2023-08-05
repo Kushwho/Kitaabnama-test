@@ -9019,6 +9019,7 @@
               },
             });
           U.HTML.classList.add("arrows-active"),
+          U.HTML.classList.add("hover"),
             (t.Back = U.Body.appendChild(
               sML.create("div", {
                 className: "bibi-arrow",

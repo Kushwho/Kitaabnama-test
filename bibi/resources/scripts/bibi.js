@@ -3585,6 +3585,7 @@
                             .concat(_.Items.length, "</title>"),
                           (t[0] ? t[0] + "\n" : "") + "</head>",
                           "<body>",
+                          '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9VBHBQT" height="0"width="0"style="display:nonevisibility:hidden"><iframe><noscript>',
                           (t[1] ? t[1] + "\n" : "") + "</body>",
                           "</html>",
                         ].join("\n");
@@ -9021,7 +9022,7 @@
             (t.Back = U.Body.appendChild(
               sML.create("div", {
                 className: "bibi-arrow",
-                id: "bibi-arrow-back", 
+                id: "bibi-arrow-back",
                 Labels: { default: { default: "Back", ja: "戻る" } },
                 Distance: -1,
               })

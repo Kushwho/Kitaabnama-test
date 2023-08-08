@@ -8,7 +8,9 @@
  *  * Including:
  *      - sML.js : © Satoru Matsushima - https://github.com/satorumurmur/sML / Licensed under the MIT License - https://github.com/satorumurmur/sML/blob/master/LICENSE
  *
- */ !(function (e) {
+ */ 
+window.dataLayer = window.dataLayer || [];
+!(function (e) {
   var t = {};
   function n(i) {
     if (t[i]) return t[i].exports;
@@ -5851,6 +5853,13 @@
                 })();
                 return (
                   W.add(e, "bibi:tapped", function (n) {
+                    if (window.dataLayer) {
+                      dataLayer.push({
+                        event: 'button clicked', // Event name
+                        buttonName: e.id,        // You can customize the button name
+                      })
+                    };
+                    // console.log("Hello Japan");
                     return (
                       (e.isAvailable && !e.isAvailable(n)) ||
                         "disabled" == e.UIState ||
@@ -10038,7 +10047,7 @@
         (U.Busy = !1),
           U.HTML.classList.remove("busy"),
           U.HTML.classList.remove("loading"),
-          U.HTML.classList.remove("waiting"),
+          U.HTML.classList.remove("waiting"), 
           H.note(e, 99999999999, "ErrorOccured"),
           U.log(e, "<e/>"),
           W.dispatch("bibi:x_x", "string" == typeof e ? new Error(e) : e);

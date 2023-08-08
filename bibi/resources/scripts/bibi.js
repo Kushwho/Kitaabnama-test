@@ -5855,7 +5855,7 @@ window.dataLayer = window.dataLayer || [];
                   W.add(e, "bibi:tapped", function (n) {
                     if (window.dataLayer) {
                       dataLayer.push({
-                        event: 'button clicked', // Event name
+                        event: 'Arrow clicked', // Event name
                         buttonName: e.id,        // You can customize the button name
                       })
                     };
